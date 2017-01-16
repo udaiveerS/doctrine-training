@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  doctrine-training-dev:
+    build: ./docker/apache
+    image: php:7.0-apache
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/apache/config/localhost.conf:/etc/apache2/sites-available/localhost.conf
+      - ./docker/apache/config/php.ini:/usr/local/etc/php/php.ini
+
+#    links:
+#      - "doctrine-training-mysql:database"
+#
+#  doctrine-training-mysql:
+#    image: mysql:8.0.0
+#    ports:
+#      - "127.0.0.1:3306:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: symfonyTest
+#      MYSQL_USER: test
+#      MYSQL_PASSWORD: root
+
+

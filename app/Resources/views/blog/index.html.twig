@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Great blog site </h1>
+    {% for post in posts %}
+    <article>
+        <h4> {{  post.title }}</h4>
+        Date of publication: {{ post.publicationDate.format('Y-m-d H:i:s') }}
+        <p>
+            {{ post.body }}
+        </p>
+        <ul> <li>
+                <a href="{{ path('uda_blog_edit_post', {'postId' : post.id }) }}">Edit this post</a>
+            </li>
+            <li>
+                <a href="{{ path('uda_blog_delete_post', {'postId' : post.id }) }}">Delete this post</a>
+            </li>
+        </ul>
+    </article>
+    {% endfor %}
+{% endblock %}

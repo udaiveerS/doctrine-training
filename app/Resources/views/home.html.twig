@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+Welcome to Gaa-sino!
+
+{% if bet %}
+    You gambled {{ bet }} and you {% if won %}won{% else %}lost{% endif %}.
+{% endif %}
+
+<form method="POST" action="{{ path('home') }}" class="form">
+    <label for="bet">Bet Something</label>
+    <input id="bet" name="bet" class="form-control" type="text" val="">
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

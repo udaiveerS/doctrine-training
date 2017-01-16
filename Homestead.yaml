@@ -1,0 +1,39 @@
+---
+ip: "192.168.33.21"
+memory: 2048
+cpus: 1
+hostname: doctrine-traning-dev
+name: doctrine-traning-dev
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "~/gaatu.com/doctrine.traning.dev"
+      to: "/var/www"
+      type: "nfs"
+
+sites:
+    - map: doctrine.traning.gaatu.dev
+      to: "/var/www/web"
+      type: symfony
+
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<form method="POST" action="{{ path('uda_blog_save_post', {'postId': post.id}) }}">
+    <label>
+        Title
+        <input type="text" name="postTitle" value="{{ post.title }}"
+               maxlength="255" required>
+    </label><br>
+    <label> Body
+        <textarea name="postBody" cols="20" rows="10" required>
+            {{ post.body }}
+        </textarea>
+    </label>
+    <br>
+    <input type="submit">
+</form>
+<a href="{{ path('uda_blog_post_list') }}">Back to the index</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+Welcome to Gaa-sino!
+
+{% if bet %}
+    You gambled {{ bet }} and you {% if won %}won{% else %}lost{% endif %}.
+{% endif %}
+
+    {% for transacton in transactions %}
+        {% for transacton in transactions %}
+            <li>{{ shipment->getid() }}</li>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

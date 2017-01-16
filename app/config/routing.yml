@@ -1,0 +1,16 @@
+blog:
+    resource: "@BlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gaatu_core:
+    resource: "@GaatuCoreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gaatu_casino:
+    resource: "@GaatuCasinoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
